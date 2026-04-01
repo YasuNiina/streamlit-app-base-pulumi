@@ -1,5 +1,7 @@
 # Streamlit app base template
 
+> **ローカル検証ポート:** `task dev` で起動すると **http://localhost:8080** でアプリにアクセスできます。
+
 In this repository you will find an empty Streamlit application base template to kickstart custom application development. The Datarobot client is already set up for you to use. It uses the application owner's API key by default.
 
 ## クイックスタート

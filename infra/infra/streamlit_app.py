@@ -50,13 +50,19 @@ streamlit_application_path = project_dir.parent / "src"
 DATAROBOT_API_TOKEN: Final[str] = "DATAROBOT_API_TOKEN"
 DATAROBOT_ENDPOINT: Final[str] = "DATAROBOT_ENDPOINT"
 
+api_token_credential = pulumi_datarobot.ApiTokenCredential(
+    resource_name=f"Streamlit App Base API Token [{PROJECT_NAME}]",
+    name=f"Streamlit App Base API Token [{PROJECT_NAME}]",
+    api_token=os.environ.get(DATAROBOT_API_TOKEN, ""),
+)
+
 streamlit_app_runtime_parameters: list[
     pulumi_datarobot.ApplicationSourceRuntimeParameterValueArgs
 ] = [
     pulumi_datarobot.ApplicationSourceRuntimeParameterValueArgs(
         type="credential",
         key=DATAROBOT_API_TOKEN,
-        value=os.environ.get(DATAROBOT_API_TOKEN, ""),
+        value=api_token_credential.id,
     ),
     pulumi_datarobot.ApplicationSourceRuntimeParameterValueArgs(
         type="string",

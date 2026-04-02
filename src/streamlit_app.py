@@ -17,8 +17,8 @@ def start_streamlit():
     set_client(Client(token=st.session_state.token, endpoint=st.session_state.endpoint))
 
     st.logo(APP_LOGO)
-    st.header('Hello world')
-    st.text('This is a Streamlit application base template to kickstart your custom app development!')
+    st.header('ハローワールド')
+    st.text('これはカスタムアプリ開発を始めるためのStreamlitアプリケーションのベーステンプレートです！')
 
 
 if __name__ == "__main__":
